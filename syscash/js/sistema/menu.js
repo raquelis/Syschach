@@ -110,6 +110,106 @@ $(document).ready(function () {
                 $("#carregando_menu").addClass("d-none");
             }
         });
+
+
+        //PARTE DE CONTAS A PAGAR//
+        $.ajax({
+            type: "POST",
+            cache: false,
+            url: "conta_pagar_crud.php",
+            data: {
+                acao: "grafico",
+                ano: ano,
+                usuario: id_usuario
+            },
+            dataType: "json",
+            success: function (data) {
+                var pagar = [];
+                var pagar_meses = [];
+                var pagar_valores = [];
+                var pagar_meses = [];
+                var pagar_valores = [];
+
+                $.each(data, function (i, item) {
+                    if (i == 0) {
+                        pagar = item;
+                    }
+                });
+
+                $.each(pagar, function (i, item) {
+                    pagar_meses.push(i);
+                    pagar_valores.push(item);
+                });
+
+                var dados = {
+                    labels: pagar_meses,
+                    datasets: [{
+                        label: "Contas a Pagar",
+                        backgroundColor: "#4080bf",
+                        borderColor: "#3973ac",
+                        hoverBackgroundColor: "#ccccff",
+                        hoverBorderColor: "#b3b3ff",
+                        borderWidth: 1,
+                        data: pagar_valores
+                    }]
+                };
+                var grafico_canva = $("#grafico");
+
+                var graficoBarra = new Chart(
+                    grafico_canva, {
+                        type: "bar",
+                        data: dados,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: "top",
+                                },
+                                title: {
+                                    display: true,
+                                    text: "Contas a Pagar - " + ano
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    display: true,
+                                    title: {
+                                        display: true,
+                                        text: "Valores R$",
+                                        color: "#000000",
+                                        font: {
+                                            weight: "bold",
+                                        }
+                                    }
+                                },
+                                x: {
+                                    display: true,
+                                    title: {
+                                        display: true,
+                                        text: "Meses do ano",
+                                        color: "#000000",
+                                        font: {
+                                            weight: "bold",
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                );
+            },
+            error: function (e) {
+                $("#div_mensagem_texto_menu").empty().append(e.responseText);
+                $("#div_mensagem_menu").show();
+            },
+            beforeSend: function () {
+                $("#carregando_menu").removeClass("d-none");
+            },
+            complete: function () {
+                $("#carregando_menu").addClass("d-none");
+            }
+        });
     });
 
     $("#home_link").click(function () {
@@ -142,6 +242,10 @@ $(document).ready(function () {
 
     $("#logout_link").click(function () {
         $("#logout_modal").modal("show");
+    });
+
+    $("#contapagar_link").click(function (e) {
+        $("#conteudo").load("conta_pagar_index.php");
     });
 
 

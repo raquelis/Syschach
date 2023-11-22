@@ -148,12 +148,9 @@
             <a href="#topo">Voltar ao topo</a>
         </p>
         <p>
-            &copy; 2021–<script>
-                document.write(new Date().getFullYear())
-            </script>
-            | Syscash - O Seu Sistema de Finanças | Alexandre -
-            <a href="https://www.youtube.com/channel/UCUeidwLoy7YK4kEeuq2sPgw" target="_blank">Peregrino de TI</a>
-        </p>
+            &copy; 2023
+            | Syscash - O Seu Sistema de Finanças | Lara e Raquel 
+            </p>
         <div class="text-center">
             <p>
                 <img src="./imagens/cc-by-nc_icon_100.svg.png" title="Creative Commons" />

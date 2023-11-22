@@ -50,6 +50,11 @@ require_once("valida_acesso.php");
             <i class="fas fa-user-cog nav_icon"></i>
             <span class="nav_name">Usuário</span>
           </a>
+          <!--Contas a pagar Aqui-->
+          <a href="#" class="nav_link" title="Contas a Pagar" id="contapagar_link">
+            <i class="fas fa-calendar-plus nav_icon"></i> 
+            <span class="nav_name">Contas a Pagar</span>
+          </a>
           <a class="nav_link" title="Sobre" id="sobre_link">
             <i class="fas fa-question-circle nav_icon"></i>
             <span class="nav_name">Sobre</span>
@@ -134,9 +139,7 @@ require_once("valida_acesso.php");
         </div>
         <div class="modal-body">
           <p>Syscash - Sistema financeiro para fins educacionais do estudo da linguagem PHP</p>
-          <p>Desenvolvido por Alexandre - Desde 2021–<script>
-              document.write(new Date().getFullYear())
-            </script>
+          <p>Desenvolvido por Lara e Raquel - Em 2023
           </p>
           <p>Licença Creative Commons - Com direito de atribuição e não comercial</p>
         </div>
