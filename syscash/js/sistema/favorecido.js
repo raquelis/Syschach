@@ -91,7 +91,7 @@ $(document).ready(function () {
 	$("#modal_salvar_sim_favorecido").click(function (e) {
 		e.stopImmediatePropagation();
 
-		if (!$("#favorecifo_dados").valid()) {
+		if (!$("#favorecido_dados").valid()) {
 			$("#modal_salvar_favorecido").modal("hide");
 			return;
 		}
