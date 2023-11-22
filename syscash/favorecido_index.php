@@ -179,7 +179,7 @@ try {
             </div>
             <div class="modal-body">
                 Deseja excluir o registro?
-                <input type="hidden" id="id_excluir_favoreido" value="" />
+                <input type="hidden" id="id_excluir_favorecido" value="" />
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="modal_excluir_sim_favorecido">Sim</button>
