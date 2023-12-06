@@ -154,7 +154,7 @@ try {
                                 <tr id="<?php echo $conta['id'] . "_contareceber"; ?>">
                                     <td><?php echo $conta["id"]; ?></td>
                                     <td><?php echo $conta["descricao"]; ?></td>
-                                    <td><?php echo $conta["favorecido"]; ?></td>
+                                    <td><?php echo buscarFavorecido($conta["favorecido"])[0]["nome"]; ?></td>
                                     <td><?php echo number_format($conta["valor"], 2, ',', '.'); ?></td>
                                     <td><?php echo date("d/m/Y", strtotime($conta["data_vencimento"])); ?></td>
                                     <td><?php echo buscarCategoria($conta["categoria_id"])[0]["descricao"]; ?></td>
