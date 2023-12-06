@@ -3,6 +3,7 @@ require_once("valida_acesso.php");
 ?>
 <?php
 require_once("categoria_crud.php");
+require_once("favorecido_crud.php");
 
 //a listagem de categoria é geral poderia ser filtrado por status
 if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
