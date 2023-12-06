@@ -40,14 +40,14 @@ require_once("valida_acesso.php");
             <i class="fas fa-tag nav_icon"></i> <span class="nav_name">Categoria</span>
           </a>
           <a href="#" class="nav_link" title="Favorecido" id="favorecido_link">
-            <i class="fas fa-tag nav_icon"></i> <span class="nav_name">Favorecido</span>
+            <i class="fas fa-users"></i> <span class="nav_name">Favorecido</span>
           </a>
           <a href="#" class="nav_link" title="Contas a Receber" id="contareceber_link">
             <i class="fas fa-calendar-plus nav_icon"></i>
             <span class="nav_name">Contas a Receber</span>
           </a>
           <a href="#" class="nav_link" title="Contas a Pagar" id="contapagar_link">
-            <i class="fas fa-calendar-plus nav_icon"></i> 
+          <i class="fas fa-money-check-alt"></i>
             <span class="nav_name">Contas a Pagar</span>
           </a>
           <a class="nav_link" title="Usuário" id="usuario_link">
