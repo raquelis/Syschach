@@ -1,6 +1,6 @@
 <?php
 
-function validaDados($registro)
+function validaDado($registro)
 {
     $erros = [];
 
