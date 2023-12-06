@@ -92,7 +92,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
                                 <input type="text" class="form-control" id="descricao_contareceber" name="descricao_contareceber" maxlength="100" value="<?php echo isset($resultado['descricao']) ? $resultado['descricao'] : ''; ?>" autofocus>
                             </div>
                             <div class="col-md-6">
-                                <label for="favorecido_contapagar" class="form-label">Favorecido</label><select name="favorecido_contapagar" id="favorecido_contapagar" class="form-select">
+                                <label for="favorecido_contareceber" class="form-label">Favorecido</label><select name="favorecido_contareceber" id="favorecido_contareceber" class="form-select">
                                     <?php
                                     $favorecidos = listarFavorecidoEntrada();
                                     foreach ($favorecidos as $favorecido) {
