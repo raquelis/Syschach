@@ -4,6 +4,7 @@ require_once("valida_acesso.php");
 <?php
 require_once("conexao.php");
 require_once("categoria_crud.php");
+require_once("favorecido_crud.php");
 
 if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
     try {

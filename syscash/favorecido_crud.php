@@ -18,13 +18,14 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
 
                 $registro = new stdClass();
                 $registro = json_decode($_POST['registro']);
-                validaDados($registro);
+                validaDado($registro);
 
-                $sql = "insert into favorecido(nome) VALUES (?)";
+                $sql = "insert into favorecido(nome, usuario_id) VALUES (?, ?)";
                 $conexao = new PDO("mysql:host=" . SERVIDOR . ";dbname=" . BANCO, USUARIO, SENHA);
                 $pre = $conexao->prepare($sql);
                 $pre->execute(array(
-                    $registro->nome_favorecido
+                    $registro->nome_favorecido,
+                    $registro->usuario_id_favorecido
                 ));
                 print json_encode($conexao->lastInsertId());
             } catch (Exception $e) {
@@ -46,7 +47,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
 
                 $registro = new stdClass();
                 $registro = json_decode($_POST['registro']);
-                validaDados($registro);
+                validaDado($registro);
 
                 $sql = "update favorecido set nome = ? where id = ? ";
                 $conexao = new PDO("mysql:host=" . SERVIDOR . ";dbname=" . BANCO, USUARIO, SENHA);
@@ -158,7 +159,7 @@ function listarFavorecidoEntrada()
     try {
         $usuario_id = isset($_SESSION["usuario_id"]) ? $_SESSION["usuario_id"] : 0;
 
-        $sql = "select * from favorecido where usuario_id = ?";
+        $sql = "select * from favorecido where usuario_id = ? order by nome";
         $conexao = new PDO("mysql:host=" . SERVIDOR . ";dbname=" . BANCO, USUARIO, SENHA);
         $pre = $conexao->prepare($sql);
         $pre->execute(array(
