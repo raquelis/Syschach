@@ -7,6 +7,9 @@
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 7.4.23
 
+CREATE DATABASE syscash;
+USE syscash;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
